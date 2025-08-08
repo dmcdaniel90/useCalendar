@@ -2,8 +2,8 @@ import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import { useState } from 'react';
 
-type TWBackgroundColorClass = `bg-${string}`;
-type TWTextColorClass = `text-${string}`;
+type TWBackgroundColorClass = string;
+type TWTextColorClass = string;
 export type ThemeConfig = {
     light: {
         backgroundColor: TWBackgroundColorClass | 'bg-white';
