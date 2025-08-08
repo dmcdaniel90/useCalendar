@@ -17,7 +17,7 @@ npm install @fullcalendar/react @fullcalendar/daygrid
 Import the necessary dependencies and the `useCalendar` hook in your component.
 
 ```javascript
-import useCalendar from './useCalendar';
+import { useCalendar } from 'use-fullcalendar';
 ```
 
 ### Define Types
@@ -25,8 +25,8 @@ import useCalendar from './useCalendar';
 The types used by the hook for theming are defined as follows:
 
 ```typescript
-type TWBackgroundColorClass = `bg-${string}`;
-type TWTextColorClass = `text-${string}`;
+type TWBackgroundColorClass = string;
+type TWTextColorClass = string;
 
 export type ThemeConfig = {
     light: {
@@ -152,5 +152,3 @@ Contributions are welcome! Please open an issue or submit a pull request if you 
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
 ---
-
-This README provides a comprehensive guide to using the `useCalendar` hook, including setup, configuration, and example usage.
