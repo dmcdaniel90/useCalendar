@@ -1,6 +1,6 @@
 {
     "name": "use-calendar",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "An easy to use calendar component for React using FullCalendar.js and TailwindCSS",
     "keywords": [
         "calendar",
@@ -13,7 +13,7 @@
     "author": "Devin McDaniel <dmcdaniel9@gmail.com>(https://code.devinmcdaniel.com)",
     "repository": {
         "type": "git",
-        "url": "https://github.com/dmcdaniel90/useCalendar"
+        "url": "git+https://github.com/dmcdaniel90/useCalendar.git"
     },
     "files": [
         "dist"
