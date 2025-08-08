@@ -1,11 +1,14 @@
 {
-    "name": "use-calendar",
+    "name": "use-fullcalendar",
     "version": "1.0.1",
     "description": "An easy to use calendar component for React using FullCalendar.js and TailwindCSS",
     "keywords": [
         "calendar",
         "react",
-        "tailwindcss"
+        "tailwindcss",
+        "fullcalendar",
+        "hooks",
+        "typescript"
     ],
     "bugs": {
         "url": "https://github.com/dmcdaniel90/use-calendar/issues"
