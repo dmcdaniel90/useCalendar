@@ -1,0 +1,46 @@
+{
+    "name": "use-calendar",
+    "version": "1.0.0",
+    "description": "An easy to use calendar component for React using FullCalendar.js and TailwindCSS",
+    "keywords": [
+        "calendar",
+        "react",
+        "tailwindcss"
+    ],
+    "bugs": {
+        "url": "https://github.com/dmcdaniel90/use-calendar/issues"
+    },
+    "author": "Devin McDaniel <dmcdaniel9@gmail.com>(https://code.devinmcdaniel.com)",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/dmcdaniel90/useCalendar"
+    },
+    "files": [
+        "dist"
+    ],
+    "type": "module",
+    "license": "MIT",
+    "scripts": {
+        "build": "tsc",
+        "ci": "npm run build",
+        "format": "prettier --write ."
+    },
+    "devDependencies": {
+        "@types/react": "^19.1.9",
+        "prettier": "^3.6.2",
+        "typescript": "^5.9.2"
+    },
+    "dependencies": {
+        "@fullcalendar/core": "^6.1.18",
+        "@fullcalendar/daygrid": "^6.1.18",
+        "@fullcalendar/react": "^6.1.18"
+    },
+    "peerDependencies": {
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0",
+        "tailwindcss": "^3.4.14"
+    },
+    "engines": {
+        "node": ">=22.0.0"
+    }
+}
