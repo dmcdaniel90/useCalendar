@@ -10,6 +10,11 @@
         "isolatedModules": true,
         "verbatimModuleSyntax": true,
         "jsx": "react-jsx",
+        "types": [
+            "@fullcalendar/core",
+            "@fullcalendar/daygrid",
+            "@fullcalendar/react"
+        ],
 
         /* Strictness */
         "strict": true,

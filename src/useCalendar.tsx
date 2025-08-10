@@ -1,23 +1,20 @@
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import { useState } from 'react';
-
-type TWBackgroundColorClass = string;
-type TWTextColorClass = string;
 export type ThemeConfig = {
     light: {
-        backgroundColor: TWBackgroundColorClass | 'bg-white';
-        textColor: TWTextColorClass | 'text-black';
+        backgroundColor: string | 'bg-white';
+        textColor: string | 'text-black';
     };
     dark: {
-        backgroundColor: TWBackgroundColorClass | 'bg-slate-800';
-        textColor: TWTextColorClass | 'text-white';
+        backgroundColor: string | 'bg-slate-800';
+        textColor: string | 'text-white';
     };
 };
 
 interface CalendarProps {
-    backgroundColor?: TWBackgroundColorClass;
-    textColor?: TWTextColorClass;
+    backgroundColor?: string;
+    textColor?: string;
     themeConfig?: ThemeConfig;
     theme?: 'light' | 'dark';
     calendarConfiguration?: any;
