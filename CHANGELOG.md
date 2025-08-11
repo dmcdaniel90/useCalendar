@@ -1,5 +1,11 @@
 # use-calendar
 
+## 1.1.1
+
+### Patch Changes
+
+- fc5036d: Fix missing import of CalendarOptions type
+
 ## 1.1.0
 
 ### Minor Changes
