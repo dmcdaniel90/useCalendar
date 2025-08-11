@@ -1,5 +1,6 @@
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
+import type { CalendarOptions } from '@fullcalendar/core';
 import { useState } from 'react';
 export type ThemeConfig = {
     light: {
@@ -17,7 +18,7 @@ interface CalendarProps {
     textColor?: string;
     themeConfig?: ThemeConfig;
     theme?: 'light' | 'dark';
-    calendarConfiguration?: any;
+    calendarConfiguration?: CalendarOptions;
 }
 
 export default function useCalendar({
