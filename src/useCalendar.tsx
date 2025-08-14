@@ -112,7 +112,7 @@ export default function useCalendar({
             default:
                 throw new Error("calendarTheme must be 'light' or 'dark'");
         }
-    }
+    };
 
     return {
         CalendarComponent,
