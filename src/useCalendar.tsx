@@ -27,7 +27,7 @@ export default function useCalendar({
     themeConfig,
     calendarConfiguration,
 }: CalendarProps): {
-    calendar: React.ReactElement<FullCalendar>;
+    CalendarComponent: () => React.ReactElement<FullCalendar>;
     toggleTheme: () => void;
     selectedDate: string;
 } {
@@ -36,7 +36,6 @@ export default function useCalendar({
     >(theme || 'light');
     const [useCustomTheme] = useState(themeConfig ? true : false);
     const [selectedDate, setSelectedDate] = useState<string>('');
-    const calendar = setupCalendar();
 
     const toggleTheme = () => {
         if (calendarTheme === 'light') {
@@ -46,7 +45,7 @@ export default function useCalendar({
         }
     };
 
-    function setupCalendar(): React.ReactElement<FullCalendar> {
+    const CalendarComponent = (): React.ReactElement<FullCalendar> => {
         if (!useCustomTheme) {
             return (
                 <FullCalendar
@@ -116,7 +115,7 @@ export default function useCalendar({
     }
 
     return {
-        calendar,
+        CalendarComponent,
         toggleTheme,
         selectedDate,
     };
