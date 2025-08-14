@@ -1,5 +1,15 @@
 # use-calendar
 
+## 1.2.0
+
+### Minor Changes
+
+- 2e8c29b: Renamed import `calendar` to `CalendarComponent`
+
+### Patch Changes
+
+- f826ca4: Add styling for hovering events and saving the selected date to state
+
 ## 1.1.1
 
 ### Patch Changes
