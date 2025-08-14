@@ -1,5 +1,11 @@
 # use-calendar
 
+## 1.3.0
+
+### Minor Changes
+
+- 76177e6: Add functions prop for hooking into events. Currently supports dateClickCallback for handling click events on a calendar day.
+
 ## 1.2.0
 
 ### Minor Changes
