@@ -14,22 +14,27 @@ export type ThemeConfig = {
     };
 };
 
+export type CalendarFunctions = {
+    dateClickCallback: (date: string) => void;
+}
+
 interface CalendarProps {
     backgroundColor?: string;
     textColor?: string;
     themeConfig?: ThemeConfig;
     theme?: 'light' | 'dark';
     calendarConfiguration?: CalendarOptions;
+    functions?: CalendarFunctions
 }
 
 export default function useCalendar({
     theme,
     themeConfig,
     calendarConfiguration,
+    functions
 }: CalendarProps): {
     CalendarComponent: () => React.ReactElement<FullCalendar>;
     toggleTheme: () => void;
-    selectedDate: string;
 } {
     const [calendarTheme, setCalendarTheme] = useState<
         'light' | 'dark' | undefined
@@ -57,7 +62,7 @@ export default function useCalendar({
                             : ['bg-slate-800', 'text-white']
                     }
                     dateClick={(dateInfo) => {
-                        setSelectedDate(dateInfo.dateStr);
+                        functions?.dateClickCallback(dateInfo.dateStr);
                     }}
                     dayCellClassNames={() =>
                         '@apply hover:bg-primary cursor-pointer'
@@ -117,6 +122,5 @@ export default function useCalendar({
     return {
         CalendarComponent,
         toggleTheme,
-        selectedDate,
     };
 }
