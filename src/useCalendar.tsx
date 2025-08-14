@@ -1,5 +1,6 @@
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
+import interactionPlugin from '@fullcalendar/interaction';
 import type { CalendarOptions } from '@fullcalendar/core';
 import { useState } from 'react';
 export type ThemeConfig = {
@@ -28,11 +29,13 @@ export default function useCalendar({
 }: CalendarProps): {
     calendar: React.ReactElement<FullCalendar>;
     toggleTheme: () => void;
+    selectedDate: string;
 } {
     const [calendarTheme, setCalendarTheme] = useState<
         'light' | 'dark' | undefined
     >(theme || 'light');
     const [useCustomTheme] = useState(themeConfig ? true : false);
+    const [selectedDate, setSelectedDate] = useState<string>('');
     const calendar = setupCalendar();
 
     const toggleTheme = () => {
@@ -47,14 +50,20 @@ export default function useCalendar({
         if (!useCustomTheme) {
             return (
                 <FullCalendar
-                    {...calendarConfiguration}
-                    plugins={[dayGridPlugin]}
+                    plugins={[dayGridPlugin, interactionPlugin]}
                     height={'60vh'}
                     viewClassNames={
                         calendarTheme === 'light'
                             ? ['bg-white', 'text-black']
                             : ['bg-slate-800', 'text-white']
                     }
+                    dateClick={(dateInfo) => {
+                        setSelectedDate(dateInfo.dateStr);
+                    }}
+                    dayCellClassNames={() =>
+                        '@apply hover:bg-primary cursor-pointer'
+                    }
+                    {...calendarConfiguration}
                 />
             );
         }
@@ -68,25 +77,37 @@ export default function useCalendar({
             case 'light':
                 return (
                     <FullCalendar
-                        {...calendarConfiguration}
                         plugins={[dayGridPlugin]}
                         height={'60vh'}
                         viewClassNames={[
                             themeConfig.light.backgroundColor,
                             themeConfig.light.textColor,
                         ]}
+                        dateClick={(dateInfo) => {
+                            setSelectedDate(dateInfo.dateStr);
+                        }}
+                        dayCellClassNames={() =>
+                            '@apply hover:bg-primary cursor-pointer'
+                        }
+                        {...calendarConfiguration}
                     />
                 );
             case 'dark':
                 return (
                     <FullCalendar
-                        {...calendarConfiguration}
                         plugins={[dayGridPlugin]}
                         height={'60vh'}
                         viewClassNames={[
                             themeConfig.dark.backgroundColor,
                             themeConfig.dark.textColor,
                         ]}
+                        dateClick={(dateInfo) => {
+                            setSelectedDate(dateInfo.dateStr);
+                        }}
+                        dayCellClassNames={() =>
+                            '@apply hover:bg-primary cursor-pointer'
+                        }
+                        {...calendarConfiguration}
                     />
                 );
             default:
@@ -97,5 +118,6 @@ export default function useCalendar({
     return {
         calendar,
         toggleTheme,
+        selectedDate,
     };
 }
