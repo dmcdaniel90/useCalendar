@@ -16,7 +16,7 @@ export type ThemeConfig = {
 
 export type CalendarFunctions = {
     dateClickCallback: (date: string) => void;
-}
+};
 
 interface CalendarProps {
     backgroundColor?: string;
@@ -24,14 +24,14 @@ interface CalendarProps {
     themeConfig?: ThemeConfig;
     theme?: 'light' | 'dark';
     calendarConfiguration?: CalendarOptions;
-    functions?: CalendarFunctions
+    functions?: CalendarFunctions;
 }
 
 export default function useCalendar({
     theme,
     themeConfig,
     calendarConfiguration,
-    functions
+    functions,
 }: CalendarProps): {
     CalendarComponent: () => React.ReactElement<FullCalendar>;
     toggleTheme: () => void;
